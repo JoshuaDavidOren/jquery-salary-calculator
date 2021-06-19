@@ -1,14 +1,14 @@
 console.log('js');
 $(document).ready(connected);
 
-
+let incrementedId = [];
 
 function swearToMe() {
     const el = $('.container2')
+    incrementedId.push(1);
 
     el.append(` <div class="row align-items-center">
-                <div class="col">` +
-        $('#firstName').val() +
+                <div class="col">` + $('#firstName').val() +
         `</div>
                 <div class="col">` + $('#lastName').val() +
         `</div>
@@ -19,7 +19,7 @@ function swearToMe() {
                 <div class="col">` + $('#annualSalary').val() +
         `</div>
                 <div class="col">
-                    <button class=delete id=theDeleteBuatton>Delete</button>
+                    <button class=delete` + (incrementedId.length) + ` ''id=theDeleteBuatton>Delete</button>
                 </div>
             </div>`);
     $('#firstName').val('')
@@ -27,7 +27,9 @@ function swearToMe() {
     $('#id').val('')
     $('#title').val('')
     $('#annualSalary').val('')
-    $('.delete').on('click', FireThem);
+    $('.delete' + incrementedId.length).on('click', FireThem);
+
+
 }
 
 let anSal = 0;
@@ -41,15 +43,20 @@ function howMuch() {
     el.append('Total Monthly: $ ', moneyMath);
 }
 
-function FireThem() {
-    console.log('your fired BITCH');
-    this.remove();
-}
+
 
 function connected() {
     console.log('JQ');
     $('#theSubmitBuatton').on('click', howMuch);
     $('#theSubmitBuatton').on('click', swearToMe);
+
+
+}
+
+function FireThem() {
+    console.log('your fired BITCH');
+    let el = $('.container2');
+    el.remove($('.row align-items-center'));
 
 
 }

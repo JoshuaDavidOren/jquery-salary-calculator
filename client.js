@@ -3,7 +3,9 @@ $(document).ready(connected);
 
 function connected() {
     console.log('JQ');
-    $('#theSubmitBuatton').on('click', swearToMe, howMuch);
+    $('#theSubmitBuatton').on('click', howMuch);
+    $('#theSubmitBuatton').on('click', swearToMe);
+
 
 }
 
@@ -34,10 +36,13 @@ function swearToMe() {
 
 }
 
+let anSal = 0;
+
 function howMuch() {
     console.log('is it working')
+    anSal += ($('#annualSalary').val() / 1)
+    let moneyMath = anSal / 12;
     let el = $('#monthly');
     el.empty();
-    el.append('text');
+    el.append('Total Monthly: $ ', moneyMath);
 }
-//let moneyMath = ('Total Monthly: $ ' + $('#annualSalary').val() / 1);

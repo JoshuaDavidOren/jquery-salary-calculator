@@ -1,13 +1,7 @@
 console.log('js');
 $(document).ready(connected);
 
-function connected() {
-    console.log('JQ');
-    $('#theSubmitBuatton').on('click', howMuch);
-    $('#theSubmitBuatton').on('click', swearToMe);
 
-
-}
 
 function swearToMe() {
     const el = $('.container2')
@@ -25,7 +19,7 @@ function swearToMe() {
                 <div class="col">` + $('#annualSalary').val() +
         `</div>
                 <div class="col">
-                    <button class=Delete id=theDeleteBuatton>Delete</button>
+                    <button class=delete id=theDeleteBuatton>Delete</button>
                 </div>
             </div>`);
     $('#firstName').val('')
@@ -33,7 +27,7 @@ function swearToMe() {
     $('#id').val('')
     $('#title').val('')
     $('#annualSalary').val('')
-
+    $('.delete').on('click', FireThem);
 }
 
 let anSal = 0;
@@ -45,4 +39,17 @@ function howMuch() {
     let el = $('#monthly');
     el.empty();
     el.append('Total Monthly: $ ', moneyMath);
+}
+
+function FireThem() {
+    console.log('your fired BITCH');
+    this.remove();
+}
+
+function connected() {
+    console.log('JQ');
+    $('#theSubmitBuatton').on('click', howMuch);
+    $('#theSubmitBuatton').on('click', swearToMe);
+
+
 }

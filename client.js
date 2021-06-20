@@ -7,7 +7,7 @@ function swearToMe() {
     const el = $('.container2')
     incrementedId.push(1);
 
-    el.append(` <div class="row align-items-center">
+    el.append(` <div class=row align-items-center>
                 <div class="col">` + $('#firstName').val() +
         `</div>
                 <div class="col">` + $('#lastName').val() +
@@ -19,7 +19,7 @@ function swearToMe() {
                 <div class="col">` + $('#annualSalary').val() +
         `</div>
                 <div class="col">
-                    <button class=delete` + (incrementedId.length) + ` ''id=theDeleteBuatton>Delete</button>
+                    <button type=button class=delete` + (incrementedId.length) + ` ''id=theDeleteBuatton>Delete</button>
                 </div>
             </div>`);
     $('#firstName').val('')
@@ -29,8 +29,8 @@ function swearToMe() {
     $('#annualSalary').val('')
     $('.delete' + incrementedId.length).on('click', FireThem);
 
-
 }
+
 
 let anSal = 0;
 
@@ -54,9 +54,7 @@ function connected() {
 }
 
 function FireThem() {
-    console.log('your fired BITCH');
-    let el = $('.container2');
-    el.remove($('.row align-items-center'));
-
+    console.log('your fired');
+    $(this).parents().parents().first().remove();
 
 }

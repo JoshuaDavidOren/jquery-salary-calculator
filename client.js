@@ -41,9 +41,13 @@ function howMuch() {
     let el = $('#monthly');
     el.empty();
     el.append('Total Monthly: $ ', moneyMath);
+    if (moneyMath >= 20000) red('#body');
 }
 
-
+function red(backG) {
+    $(backG).css('background-color', 'red')
+}
+//"document.getElementById("body").style.background-color = 'red'";
 
 function connected() {
     console.log('JQ');

@@ -16,12 +16,13 @@ function swearToMe() {
         `</div>
                 <div class="col">` + $('#title').val() +
         `</div>
-                <div class="col">` + $('#annualSalary').val() +
-        `</div>
+                <div id='lessMoney' class="col"><p class=lessMoney>` + $('#annualSalary').val() +
+        `</P></div>
                 <div class="col">
                     <button type=button class=delete` + (incrementedId.length) + ` ''id=theDeleteBuatton>Delete</button>
                 </div>
             </div>`);
+
     $('#firstName').val('')
     $('#lastName').val('')
     $('#id').val('')
@@ -59,6 +60,14 @@ function connected() {
 
 function FireThem() {
     console.log('your fired');
+    $('p.lessMoney').val(Fun);
     $(this).parents().parents().first().remove();
 
+
+
+}
+
+function Fun() {
+
+    console.log(this);
 }
